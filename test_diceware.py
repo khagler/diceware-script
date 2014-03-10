@@ -25,3 +25,5 @@ class TestDiceware(TestCase):
         # Test that a wordlist is returned.
         self.assertEqual(diceware.get_rolls(5),
                          ['11111', '22222', '33333', '44444', '55555'])
+        # Test with a string for the number of words.
+        self.assertEqual(diceware.get_rolls('1'), ['66666'])

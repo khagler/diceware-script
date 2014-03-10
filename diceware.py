@@ -66,7 +66,9 @@ def get_rolls(words):
     @rtype: list
     """
     roll_list = []
-    for num in range(words):
+    # Once through the loop for each word. The words parameter should be an
+    # integer, but convert it to be safe.
+    for num in range(int(words)):
         roll_list.append(
             raw_input("Please enter the rolls for word {}:".format(num)))
     return roll_list
