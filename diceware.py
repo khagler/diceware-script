@@ -5,6 +5,7 @@ dictionary of words with the five digit roll (from 111111 to 666666) as
 the key.
 """
 
+import argparse
 import csv
 
 
@@ -103,3 +104,18 @@ def generate_passphrase(words, wordlist_file):
     rolls = get_rolls(words)
     # Finally, get the passphrase.
     return get_passphrase(rolls, wordlist)
+
+if __name__ == "__main__":
+    # Set up the parser and parse the arguements
+    parser = argparse.ArgumentParser(
+        description="Diceware Passphrase Generator")
+    parser.add_argument("words", help="number of words in the passphrase",
+                        type=int)
+    parser.add_argument("-w", "--wordlist",
+                        default="wordlists/defaultwordlist.txt",
+                        help="path to a Diceware wordlist file")
+    args = parser.parse_args()
+
+    # Generate the passphrase
+    print(generate_passphrase(args.words, args.wordlist))
+    
