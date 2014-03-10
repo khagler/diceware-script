@@ -69,6 +69,9 @@ def get_rolls(words):
     # Once through the loop for each word. The words parameter should be an
     # integer, but convert it to be safe.
     for num in range(int(words)):
-        roll_list.append(
-            raw_input("Please enter the rolls for word {}:".format(num)))
+        while True:
+            roll = raw_input("Please enter the rolls for word {}:".format(num))
+            if validate_roll(roll):
+                break
+        roll_list.append(roll)
     return roll_list
