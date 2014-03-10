@@ -1,4 +1,5 @@
 from unittest import TestCase
+from mock import MagicMock, patch
 import diceware
 
 class TestDiceware(TestCase):
@@ -17,5 +18,10 @@ class TestDiceware(TestCase):
         # Test with a roll that is the wrong length.
         self.assertFalse(diceware.validate_roll("111111"))
 
-    def test_get_rolls(self):
-        self.fail()
+    @patch('__builtin__.raw_input')
+    def test_get_rolls(self, mock_raw_input):
+        mock_raw_input.side_effect = ['11111', '22222', '33333', '44444',
+                                      '55555', '66666', '77777']
+        # Test that a wordlist is returned.
+        self.assertEqual(diceware.get_rolls(5),
+                         ['11111', '22222', '33333', '44444', '55555'])
