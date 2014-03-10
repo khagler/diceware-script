@@ -43,6 +43,7 @@ def validate_roll(roll):
         return False
     # Make sure the roll has exactly five digits.
     if len(roll) != 5:
+        print("Diceware rolls must be exactly five digits.")
         return False
     # Now loop through each digit making sure it's in the allowed range
     # of 1 through 6.
