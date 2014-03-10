@@ -4,9 +4,11 @@ import diceware
 
 class TestDiceware(TestCase):
     def test_read_wordlist(self):
+        wordlist_file = "wordlists/defaultwordlist.txt"
         test_words = {'11111': 'a', '12345': 'apathy', '66666': '@'}
         # Test that the wordlist is read successfully.
-        self.assertDictContainsSubset(test_words, diceware.read_wordlist())
+        self.assertDictContainsSubset(test_words,
+                                      diceware.read_wordlist(wordlist_file))
 
     def test_validate_roll(self):
         # Test with a valid roll.

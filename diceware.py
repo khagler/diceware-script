@@ -8,12 +8,11 @@ the key.
 import csv
 
 
-def read_wordlist(wordlist_file="wordlists/defaultwordlist.txt"):
+def read_wordlist(wordlist_file):
     """
     Read a wordlist file and return a dictionary containing that wordlist.
 
-    @param wordlist: The wordlist file to read. Optional, defaults to the
-        standard wordlist.
+    @param wordlist: The wordlist file to read.
     @type wordlist: string
     """
     wordlist_dict = {}
