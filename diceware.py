@@ -95,3 +95,11 @@ def get_passphrase(rolls, wordlist):
     for roll in rolls:
         passphrase += wordlist[roll] + " "
     return passphrase.strip()
+
+def generate_passphrase(words, wordlist_file):
+    # Start by reading in the wordlist.
+    wordlist= read_wordlist(wordlist_file)
+    # Next get the list of rolls
+    rolls = get_rolls(words)
+    # Finally, get the passphrase.
+    return get_passphrase(rolls, wordlist)
