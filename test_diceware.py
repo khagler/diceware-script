@@ -27,3 +27,10 @@ class TestDiceware(TestCase):
                          ['11111', '22222', '33333', '44444', '55555'])
         # Test with a string for the number of words.
         self.assertEqual(diceware.get_rolls('1'), ['66666'])
+
+    def test_get_passphrase(self):
+        test_wordlist = {'12345': 'test', '23456': 'foo', '34567': 'bar'}
+        test_rolls = ['34567', '12345']
+        # Test that the correct passphrase is returned.
+        self.assertEqual(diceware.get_passphrase(test_rolls, test_wordlist),
+                         "bar test")

@@ -76,3 +76,23 @@ def get_rolls(words):
                 break
         roll_list.append(roll)
     return roll_list
+
+def get_passphrase(rolls, wordlist):
+    """
+    Return a passphrase for a list of rolls.
+
+    @param rolls: A list of rolls entered by the user.
+    @type rolls: list
+
+    @param wordlist: A dictionary from which the passphrase will be looked up.
+    @type wordlist: dict
+
+    @return: A passphrase.
+    @rtype: string
+    """
+    passphrase = ""
+    # Loop through the list of rolls, looking each up in the wordlist and
+    # adding the corresponding word to the passphrase.
+    for roll in rolls:
+        passphrase += wordlist[roll] + " "
+    return passphrase.strip()
