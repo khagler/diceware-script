@@ -9,7 +9,7 @@ Usage
 Example:
 
 	python diceware.py 5
-Generate a passphrase give words long.
+Generate a passphrase five words long.
 
 	python diceware.py 3 --wordlist foo.txt
 Generate a three word passphrase using a wordlist contained in the `foo.txt` file.
