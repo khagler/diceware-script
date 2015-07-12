@@ -13,8 +13,11 @@ def read_wordlist(wordlist_file):
     """
     Read a wordlist file and return a dictionary containing that wordlist.
 
-    @param wordlist_file: The wordlist file to read.
+    @param wordlist_file: The path to the wordlist file to read.
     @type wordlist_file: string
+
+    @return: A dictionary containing the wordlist, with the rolls as the keys.
+    @rtype: dict
     """
     wordlist_dict = {}
     with open(wordlist_file, 'rb') as wordlist:
