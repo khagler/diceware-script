@@ -2,6 +2,7 @@ from unittest import TestCase
 from mock import MagicMock, patch
 import diceware
 
+
 class TestDiceware(TestCase):
     def test_read_wordlist(self):
         wordlist_file = "wordlists/defaultwordlist.txt"
