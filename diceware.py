@@ -20,7 +20,7 @@ def read_wordlist(wordlist_file):
     @rtype: dict
     """
     wordlist_dict = {}
-    with open(wordlist_file, 'rb') as wordlist:
+    with open(wordlist_file, 'r') as wordlist:
         wordreader = csv.reader(wordlist, delimiter='\t',
                                 quoting=csv.QUOTE_NONE)
         for row in wordreader:
@@ -75,7 +75,7 @@ def get_rolls(words):
     # will be seen by the user, we want to start from 1, not 0.
     for num in range(1, int(words) + 1):
         while True:
-            roll = raw_input("Please enter the rolls for word {}:".format(num))
+            roll = input("Please enter the rolls for word {}:".format(num))
             if validate_roll(roll):
                 break
         roll_list.append(roll)
@@ -113,7 +113,7 @@ def generate_passphrase(words, wordlist_file):
 
 
 if __name__ == "__main__":
-    # Set up the parser and parse the arguements
+    # Set up the parser and parse the arguments
     parser = argparse.ArgumentParser(
         description="Diceware Passphrase Generator")
     parser.add_argument("words", help="number of words in the passphrase",
